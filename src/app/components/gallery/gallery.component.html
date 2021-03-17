@@ -4,8 +4,8 @@
 
 <div class="component-container">
     <div class="carousel-container">
-        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-            <mdb-carousel-item *ngFor="let image of images">
+        <mdb-carousel class="carousel-fade" [animation]="'fade'">
+            <mdb-carousel-item class="carousel-item" *ngFor="let image of images">
                 <app-carousel-image [imageData]=image></app-carousel-image>
             </mdb-carousel-item>
         </mdb-carousel>

@@ -15,8 +15,4 @@ export class CarouselImageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClicked() {
-    alert("clicked");
-  }
-
 }
