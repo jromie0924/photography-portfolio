@@ -2,3 +2,11 @@
     display: flex;
     justify-content: center;
 }
+
+.body-container {
+    background-color: rgb(202, 200, 200);
+}
+
+.top-bar-container {
+    background-color: darkgrey;
+}

@@ -1,15 +1,22 @@
 .img-container {
+    justify-content: inherit;
     display: inherit;
-    background-color: darkgray;
+    flex: 0 0 100px;
+    padding: 1em;
+}
+
+.img-wrapper {
+    display: inherit;
     justify-content: inherit;
 }
 
 .image {
     width: auto;
-    max-height: 500px;
+    max-height: 250px;
 }
 
 .carousel-image-container {
-    display: flex;
+    width: 100%;
     justify-content: center;
+    display: flex;
 }

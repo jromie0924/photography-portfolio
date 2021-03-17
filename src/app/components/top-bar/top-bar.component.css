@@ -1,0 +1,19 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+}
+
+.top-bar-text {
+    display: block;
+}
+
+.menu-container {
+    position: absolute;
+    left: 0;
+    padding-top: 1.9em;
+    padding-left: 1.7em;
+}
+
+.menu-icon {
+    display: block
+}
