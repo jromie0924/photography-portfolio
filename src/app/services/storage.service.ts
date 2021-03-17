@@ -30,6 +30,8 @@ export class StorageService {
     private setup() {
         this.databaseService.imageData.pipe(filter(values => !!values), take(1)).subscribe(values => {
             this.afStorage.refFromURL(`${environment.imageUrl}/${environment.imageDirectory}`).listAll().subscribe(obj => {
+
+                // Progress tracker subject used as a waiting method for the promises to finish.
                 const progressTracker = new Subject<number>();
                 progressTracker.next(-1);
                 let counter = 0;
