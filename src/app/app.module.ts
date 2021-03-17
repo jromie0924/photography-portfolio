@@ -13,14 +13,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ImageComponent } from './components/image/image.component';
+import { CarouselImageComponent } from './components/image/carousel-image.component';
 import { CategoryComponent } from './components/category/category.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
-    ImageComponent,
+    CarouselImageComponent,
     CategoryComponent
   ],
   imports: [
@@ -30,7 +31,8 @@ import { CategoryComponent } from './components/category/category.component';
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     AuthService,

@@ -1,0 +1,11 @@
+.img-container {
+    cursor: pointer;
+    display: flex;
+    background-color: darkgray;
+    justify-content: center;
+}
+
+.image {
+    width: auto;
+    max-height: 500px;
+}
