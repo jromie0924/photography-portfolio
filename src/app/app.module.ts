@@ -3,7 +3,7 @@ import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,13 +16,17 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { CarouselImageComponent } from './components/image/carousel-image.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { KnobModule } from 'primeng/knob';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     CarouselImageComponent,
-    CategoryComponent
+    CategoryComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,13 +36,18 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    KnobModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,
     StorageService,
     DatabaseService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }
