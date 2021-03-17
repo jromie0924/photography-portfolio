@@ -1,9 +1,5 @@
-<!-- <div class="container" *ngFor="let image of images">
-    <img src="{{image.source}}" alt="pic">
-</div> -->
-
-<div class="component-container">
-    <div class="carousel-container">
+<div class="container-fluid gallery-contaienr">
+    <div class="carousel-container col-md-12">
         <mdb-carousel class="carousel-fade" [animation]="'fade'">
             <mdb-carousel-item class="carousel-item" *ngFor="let image of images">
                 <app-carousel-image [imageData]=image></app-carousel-image>

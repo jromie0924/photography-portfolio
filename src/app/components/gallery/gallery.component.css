@@ -5,6 +5,11 @@
 }
 
 .carousel-container {
+    display: inherit;
+    justify-content: inherit;
+}
+
+.gallery-container {
     display: flex;
     justify-content: center;
 }

@@ -1,10 +1,15 @@
 .img-container {
-    display: flex;
+    display: inherit;
     background-color: darkgray;
-    justify-content: center;
+    justify-content: inherit;
 }
 
 .image {
     width: auto;
     max-height: 500px;
+}
+
+.carousel-image-container {
+    display: flex;
+    justify-content: center;
 }

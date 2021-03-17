@@ -1,3 +1,5 @@
-<div class="img-container" *ngIf="imageData">
-    <img class="image" src="{{imageData.source}}" alt="{{imageData.title}}">
+<div class="container-fluid carousel-image-container">
+    <div class="img-container col-md-12" *ngIf=" imageData">
+        <img class="image" src="{{imageData.source}}" alt="{{imageData.title}}">
+    </div>
 </div>
