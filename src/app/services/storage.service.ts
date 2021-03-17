@@ -46,6 +46,7 @@ export class StorageService {
                         res();
                     }).catch(reason => {
                         rejects.push(reason);
+                        res();
                     });
                 });
             });
