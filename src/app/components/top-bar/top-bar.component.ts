@@ -12,4 +12,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  public menuClicked() {
+    console.log("top bar menu clicked");
+  }
 }

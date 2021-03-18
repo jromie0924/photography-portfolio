@@ -1,10 +1,11 @@
 .text-container {
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
-.top-bar-text {
-    display: block;
+.title {
+    padding-left: 2.5em;
 }
 
 .menu-container {
@@ -15,5 +16,6 @@
 }
 
 .menu-icon {
-    display: block
+    display: block;
+    cursor: pointer;
 }
