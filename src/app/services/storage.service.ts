@@ -27,14 +27,13 @@ export class StorageService {
         this._backgroundPhoto = new BehaviorSubject<string>(null);
         this.backgroundPhoto = this._backgroundPhoto.asObservable();
 
-
-        if (this.authService.authState) {
-            this.setup();
-        } else {
-            this.authService.anonymousLogin().then(() => {
+        this.authService.authUser.pipe(take(1)).subscribe(val => {
+            if (val) {
                 this.setup();
-            });
-        }
+            } else {
+                this.authService.anonymousLogin().then(() => this.setup()).catch(err => console.error(err));
+            }
+        });
     }
 
     private setup() {
