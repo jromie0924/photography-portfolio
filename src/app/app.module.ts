@@ -21,6 +21,7 @@ import { KnobModule } from 'primeng/knob';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BioComponent } from './components/bio/bio.component';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BioComponent } from './components/bio/bio.component';
     MDBBootstrapModule.forRoot(),
     KnobModule,
     BrowserAnimationsModule,
-    SidebarModule
+    SidebarModule,
+    ButtonModule
   ],
   providers: [
     AuthService,
