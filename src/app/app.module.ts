@@ -20,6 +20,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { KnobModule } from 'primeng/knob';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BioComponent } from './components/bio/bio.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GalleryComponent,
     CarouselImageComponent,
     CategoryComponent,
-    TopBarComponent
+    TopBarComponent,
+    BioComponent
   ],
   imports: [
     BrowserModule,

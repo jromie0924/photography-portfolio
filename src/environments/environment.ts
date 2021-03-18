@@ -15,6 +15,7 @@ export const environment = {
   },
   imageDirectory: "test",
   imageUrl: "gs://photography-portfolio-8f6a1.appspot.com",
+  backgroundDirectory: "background",
   databaseUrl: "https://photography-portfolio-8f6a1-default-rtdb.firebaseio.com/"
 };
 

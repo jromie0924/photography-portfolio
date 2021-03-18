@@ -10,6 +10,7 @@ export const environment = {
     measurementId: "G-FCKNLE7917"
   },
   imageDirectory: "images",
+  backgroundDirectory: "background",
   imageUrl: "",
   databaseUrl: ""
 };

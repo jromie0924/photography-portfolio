@@ -3,7 +3,7 @@ import { environment } from './../../environments/environment';
 import { AuthService } from './auth.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ImageModel } from '../models/image.model';
 import { filter, take } from 'rxjs/operators';
 import { ListResult } from '@angular/fire/storage/interfaces';
@@ -11,14 +11,23 @@ import { ListResult } from '@angular/fire/storage/interfaces';
 @Injectable()
 export class StorageService {
 
-    public photos: BehaviorSubject<Array<ImageModel>>;
+    public photos: Observable<Array<ImageModel>>;
+    public backgroundPhoto: Observable<string>;
+
+    private _photos: BehaviorSubject<Array<ImageModel>>;
+    private _backgroundPhoto: BehaviorSubject<string>;
 
     constructor(
         private afStorage: AngularFireStorage,
         private authService: AuthService,
         private databaseService: DatabaseService
     ) {
-        this.photos = new BehaviorSubject<Array<ImageModel>>(null);
+        this._photos = new BehaviorSubject<Array<ImageModel>>(null);
+        this.photos = this._photos.asObservable();
+        this._backgroundPhoto = new BehaviorSubject<string>(null);
+        this.backgroundPhoto = this._backgroundPhoto.asObservable();
+
+
         if (this.authService.authState) {
             this.setup();
         } else {
@@ -29,9 +38,19 @@ export class StorageService {
     }
 
     private setup() {
+        this.afStorage.refFromURL(`${environment.imageUrl}/${environment.backgroundDirectory}`).listAll().pipe(take(1)).subscribe(image => {
+            if (image.items.length) {
+                image.items[0].getDownloadURL()
+                    .then(url => this._backgroundPhoto.next(url))
+                    .catch(() => this._backgroundPhoto.next("NO_URL"));
+            } else {
+                this._backgroundPhoto.next("NO_URL");
+            }
+        });
+
         this.databaseService.imageData.pipe(filter(values => !!values), take(1)).subscribe(values => {
             this.afStorage.refFromURL(`${environment.imageUrl}/${environment.imageDirectory}`).listAll().subscribe(async obj => {
-                this.photos.next(await this.getImageUrls(obj, values));
+                this._photos.next(await this.getImageUrls(obj, values));
             })
         });
     }
