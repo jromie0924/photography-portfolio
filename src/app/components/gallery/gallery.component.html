@@ -1,9 +1,12 @@
 <div class="gallery-contaienr">
     <div class="carousel-container col-md-12">
-        <mdb-carousel class="carousel-fade" [animation]="'fade'">
-            <mdb-carousel-item class="carousel-item" *ngFor="let image of images">
-                <app-carousel-image [imageData]=image></app-carousel-image>
-            </mdb-carousel-item>
-        </mdb-carousel>
+        <p-carousel [value]="images | async" [numVisible]="1" [circular]="true" [autoplayInterval]="7000">
+            <ng-template let-image pTemplate="item">
+                <div class="image-item">
+                    <app-carousel-image [imageData]=image></app-carousel-image>
+                </div>
+            </ng-template>
+        </p-carousel>
+
     </div>
 </div>

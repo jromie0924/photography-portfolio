@@ -15,13 +15,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CarouselImageComponent } from './components/image/carousel-image.component';
 import { CategoryComponent } from './components/category/category.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { KnobModule } from 'primeng/knob';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BioComponent } from './components/bio/bio.component';
-import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,11 +39,10 @@ import { ButtonModule } from 'primeng/button';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    MDBBootstrapModule.forRoot(),
-    KnobModule,
     BrowserAnimationsModule,
     SidebarModule,
-    ButtonModule
+    FormsModule,
+    CarouselModule
   ],
   providers: [
     AuthService,
