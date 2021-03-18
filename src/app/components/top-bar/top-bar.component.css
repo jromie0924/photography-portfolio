@@ -1,21 +1,26 @@
 .text-container {
+    padding: 1.4em 2.8em 1em 0;
     display: flex;
-    justify-content: center;
     text-align: center;
 }
 
 .title {
     padding-left: 2.5em;
+    white-space: nowrap;
 }
 
 .menu-container {
     position: absolute;
     left: 0;
-    padding-top: 1.9em;
-    padding-left: 1.7em;
+    padding-top: 2em;
+    padding-left: 2.4em;
 }
 
 .menu-icon {
     display: block;
     cursor: pointer;
+}
+
+.row {
+    display: flex;
 }
