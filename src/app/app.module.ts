@@ -14,7 +14,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CarouselImageComponent } from './components/image/carousel-image.component';
-import { CategoryComponent } from './components/category/category.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +26,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     GalleryComponent,
     CarouselImageComponent,
-    CategoryComponent,
     TopBarComponent,
     BioComponent
   ],
