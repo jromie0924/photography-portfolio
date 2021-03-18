@@ -1,12 +1,14 @@
-<div class="gallery-contaienr">
+<!-- <div class="gallery-contaienr">
     <div class="carousel-container col-md-12">
-        <p-carousel [value]="images | async" [numVisible]="1" [circular]="true" [autoplayInterval]="7000">
-            <ng-template let-image pTemplate="item">
-                <div class="image-item">
-                    <app-carousel-image [imageData]=image></app-carousel-image>
-                </div>
-            </ng-template>
-        </p-carousel>
-
     </div>
+</div> -->
+<div class="carousel-container">
+    <p-carousel [value]="images | async" [numVisible]="1" [circular]="true">
+        <ng-template let-image pTemplate="item">
+            <div class="image-item">
+                <!-- <app-carousel-image [imageData]=image></app-carousel-image> -->
+                <img class="image" src="{{image.source}}" alt="{{image.title}}">
+            </div>
+        </ng-template>
+    </p-carousel>
 </div>

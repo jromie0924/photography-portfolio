@@ -1,17 +1,15 @@
 <div class="container-fluid body" [ngStyle]="bodyStyle | async">
-    <div class="container-fluid app-container top-bar-container">
+    <div class="app-container top-bar-container">
         <div class="row">
             <app-top-bar></app-top-bar>
         </div>
     </div>
 
-    <div class="container-fluid app-container app-container">
-        <div class="row">
-            <router-outlet></router-outlet>
-        </div>
+    <div class="app-container">
+        <router-outlet></router-outlet>
     </div>
 
-    <div class="container-fluid app-container">
+    <div class="app-container">
         <div class="row">
             <div class="col-md-12">
                 <app-bio></app-bio>

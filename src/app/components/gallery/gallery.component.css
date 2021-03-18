@@ -5,8 +5,17 @@
 }
 
 .carousel-container {
-    display: inherit;
-    justify-content: inherit;
+    object-fit: contain;
+}
+
+.image-item {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: auto;
+    max-height: 250px;
 }
 
 .gallery-container {
