@@ -1,7 +1,7 @@
 .img-container {
     justify-content: inherit;
     display: inherit;
-    flex: 0 0 100px;
+    /* flex: 0 0 100px; */
     padding: 1em;
 }
 
@@ -12,7 +12,7 @@
 
 .image {
     width: auto;
-    max-height: 250px;
+    height: 400px;
 }
 
 .carousel-image-container {
