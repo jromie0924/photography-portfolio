@@ -7,6 +7,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ImageModel } from '../models/image.model';
 import { filter, take } from 'rxjs/operators';
 import { ListResult } from '@angular/fire/storage/interfaces';
+import { Constants } from '../constants/constants';
 
 @Injectable()
 export class StorageService {
@@ -41,9 +42,9 @@ export class StorageService {
             if (image.items.length) {
                 image.items[0].getDownloadURL()
                     .then(url => this._backgroundPhoto.next(url))
-                    .catch(() => this._backgroundPhoto.next("NO_URL"));
+                    .catch(() => this._backgroundPhoto.next(Constants.noUrl()));
             } else {
-                this._backgroundPhoto.next("NO_URL");
+                this._backgroundPhoto.next(Constants.noUrl());
             }
         });
 

@@ -1,3 +1,4 @@
+import { Constants } from './constants/constants';
 import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { filter, take, takeUntil } from 'rxjs/operators';
@@ -26,10 +27,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.storageService.backgroundPhoto.pipe(filter(url => !!url), takeUntil(this.unsubscribe)).subscribe(url => {
-      this.backgroundPhoto = url; // TODO: add constant string value to check for no url
+      const backgroundImageStyle = url === Constants.noUrl() ? "none" : `url(${url})`;
+      this.backgroundPhoto = url;
       const style = {
         "background-color": "rgb(74, 74, 74)",
-        "background-image": `url(${url})`,
+        "background-image": backgroundImageStyle,
         "background-size": "cover"
       };
       this.bodyStyle.next(style);
