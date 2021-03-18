@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
+  display = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   public menuClicked() {
-    console.log("top bar menu clicked");
+    // console.log("top bar menu clicked");
+    this.display = !this.display;
   }
 }

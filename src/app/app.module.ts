@@ -18,6 +18,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { KnobModule } from 'primeng/knob';
+import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -38,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireDatabaseModule,
     MDBBootstrapModule.forRoot(),
     KnobModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SidebarModule
   ],
   providers: [
     AuthService,
