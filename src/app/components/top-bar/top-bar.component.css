@@ -9,6 +9,10 @@
     white-space: nowrap;
 }
 
+.top-bar-text {
+    font-weight: 500;
+}
+
 .menu-container {
     position: absolute;
     left: 0;
