@@ -1,7 +1,7 @@
 import { Constants } from './constants/constants';
 import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';
-import { filter, take, takeUntil } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
 import { Subject, BehaviorSubject } from 'rxjs';
 
 @Component({

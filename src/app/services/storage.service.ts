@@ -3,7 +3,7 @@ import { environment } from './../../environments/environment';
 import { AuthService } from './auth.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ImageModel } from '../models/image.model';
 import { filter, take } from 'rxjs/operators';
 import { ListResult } from '@angular/fire/storage/interfaces';
